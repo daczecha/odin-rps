@@ -1,0 +1,184 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Mohave&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mohave', sans-serif;
+}
+
+body{
+    color:white;
+    background: rgb(47,54,64);
+    background: linear-gradient(90deg, rgba(47,54,64,1) 0%, rgba(57,83,139,1) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap:60px;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.playground{
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+}
+
+.player-side{
+    flex:1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap:30px;
+}
+
+.score{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.opponent-side{
+    flex:1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:30px;
+
+}
+
+.picks{
+    display: flex;
+    gap:30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.picks img{
+    flex:1 1 0px;
+    width:150px;
+    height:auto;
+
+}
+
+.picked .pick img{
+    flex:1 1 0px;
+    width:150px;
+    height:auto;
+}
+
+.questionmark{
+
+    animation-name: img-anim;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+img{
+    cursor: pointer;
+    opacity: .9;
+    transition:.5s;
+}
+
+img:hover{
+    scale: 1.05 ;
+    
+}
+
+
+footer{
+    font-weight: bolder;
+    font-size:23px;
+}
+
+#round{
+    font-size: 25px;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#game-over-dark{
+    display: none;
+    background: rgb(47,54,64);
+background: linear-gradient(90deg, rgba(47,54,64,1) 0%, rgba(57,83,139,1) 100%);
+    opacity: .98;
+    position: absolute;
+    height:600px;
+    width:100vw;
+}
+
+#modal{
+    position: absolute;
+    top:50vh;
+    display: none;
+    color: #1f1f1f;
+    background-color: #efefef;
+    width: 100%;
+    max-width:400px;
+    height:250px;
+    transform: translateY(-50%);
+    border-radius: 20px;
+    z-index: 100;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+}
+
+#message{
+    font-size:35px;
+}
+
+#end-score{
+    font-size: 32px;
+}
+
+#player-end-score{
+    color:#4cd137;
+}
+
+#opponent-end-score{
+    color:#e84118;
+}
+
+#play-again{
+    width:130px;
+    height:50px;
+    border-radius:10px;
+    border:0;
+    font-size: 20px;
+    cursor:pointer;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+@keyframes img-anim {
+    0% {transform: rotate(0deg);}
+    25% {transform: rotate(20deg);}
+    50%{transform: rotate(0deg);}
+    75% {transform: rotate(-20deg);}
+    100% {transform: rotate(0deg);}
+  }

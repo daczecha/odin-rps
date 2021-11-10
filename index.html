@@ -3,11 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <button id = "rock" onclick="Game(this.id)">rock</button>
-    <button id = "paper" onclick="Game(this.id)">paper</button>
-    <button id = "scissors" onclick="Game(this.id)">scissors</button> 
+    <div class="header">
+        <h1>ROCK PAPER SCISSORS</h1>
+        <h2 id = "round">ROUND 1</h2>
+    </div>
+    <div class="playground">
+        <div class="player-side">
+
+            <div class="score">
+                <h2>Your Score</h2>
+                <div class="score-container">
+                    <i id = "player-score-1" class="far fa-star"></i>
+                    <i id = "player-score-2" class="far fa-star"></i>
+                    <i id = "player-score-3" class="far fa-star"></i>
+                </div>
+            </div>
+            <div class="picks">
+                <div class = "pick" id = "rock" onclick="Game(this.id)">
+                    <!-- <i class="far fa-hand-rock"></i> -->
+                    <img src="img/rock.png" alt="">
+                </div>
+                <div class = "pick" id = "paper" onclick="Game(this.id)">
+                    <!-- <i class="far fa-hand-paper"></i> -->
+                    <img src="img/paper.png" alt="">
+    
+                </div>
+                <div class = "pick" id = "scissors" onclick="Game(this.id)">
+                    <!-- <i class="far fa-hand-scissors"></i> -->
+                    <img src="img/scissors.png" alt="">
+      
+                </div>
+            </div>
+            <h3>Your Pick</h3>
+        </div>
+        <div class="opponent-side">
+            <div class="score">
+                <h2>Opponent's Score</h2>
+                <div class="score-container">
+                    <i id = "computer-score-1" class="far fa-star"></i>
+                    <i id = "computer-score-2" class="far fa-star"></i>
+                    <i id = "computer-score-3" class="far fa-star"></i>
+                </div>
+            </div>
+            <div class="picked">
+                <div class="pick">
+                    <img id = "computer-pick" class ="questionmark" src="img/questionmark.png" alt="">
+                </div>
+            </div>
+            <h3>Opponent's Pick</h3>
+        </div>
+    </div>
+    <footer id = "footer">
+
+    </footer>
+    
+    <div id="game-over-dark">
+    </div>
+
+    <div id="modal">
+        <h2 id = "message">YOU WIN!</h2>
+        <h3 id = "end-score">3:0</h3>
+        <button id = "play-again" onclick="Restart()">Play Again</button>
+    </div>
 </body>
 <script src = "script.js"></script>
 </html>

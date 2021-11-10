@@ -1,27 +1,49 @@
 let playerSelection;
 let computerSelection;
 
+let playerScore = 0;
+let computerScore = 0;
 
-function Compare(cS, pS){//computerSelection, playerSelection
+function Compare(cS, pS,score){//computerSelection, playerSelection, maxScore
     if(cS === pS){
         console.log("Tie");
+        console.log(`${playerScore} | ${computerScore}`);
     } else if(
               (cS === "rock" &&  pS === "scissors") ||
               (cS === "scissors" &&  pS === "paper") ||
               (cS === "paper" &&  pS === "rock")   
              ){
-        console.log("Lose");       
+
+        computerScore++;
+        if(computerScore<score){
+
+            console.log("Lose");
+            console.log(`${playerScore} | ${computerScore}`);
+
+        }else{
+            console.log("You lost :(");
+            console.log(`${playerScore} | ${computerScore}`);
+        }
+
     } else{
-        console.log("Win");
+        playerScore++;
+        if(playerScore <score){
+            console.log("Win");
+            console.log(`${playerScore} | ${computerScore}`);
+        }else{
+            console.log("You win!");
+            console.log(`${playerScore} | ${computerScore}`);
+        }
     }
 }
 
 function ComputerPlay(){
     let rps = ["rock", "paper", "scissors"];
-    return rps[RandInt(rps.length)];
+    computerSelection = rps[RandInt(rps.length)];
 }
 
-function PlayerPlay(id){
+
+function Game(id){
     switch(id){
         case "rock":
             playerSelection = "rock";
@@ -34,8 +56,8 @@ function PlayerPlay(id){
             break;
         default:
     }
-    computerSelection = ComputerPlay();
-    Compare(computerSelection,playerSelection);
+    ComputerPlay();
+    Compare(computerSelection,playerSelection, 1);
 }
 
 function RandInt(range){
